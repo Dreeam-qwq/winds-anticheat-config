@@ -613,8 +613,8 @@ checks:
     vehicle:
       preventdestroyown: true
       enforcelocation: false
-      schedulesetbacks: false
-      schedulesetpassenger: false
+      schedulesetbacks: default
+      schedulesetpassenger: default
       morepackets:
         active: false
         actions: vl>2 log:morepackets:2:5:if cancel vl>100 cancel log:morepackets:1:2:if
@@ -669,7 +669,7 @@ checks:
       flying:
         cancelwaiting: true
     wrongturn:
-      active: false
+      active: default
       actions: cancel log:wrongturn:0:15:icf
 strings:
   kickagainst: ncp kick [player] &c&l(!)&7 Invalid block placements.
