@@ -633,7 +633,7 @@ checks:
       actions: cancel vl>17 cancel log:moving:10:15:i
     active: default
     attackfrequency:
-      active: false
+      active: true
       limitforseconds:
         half: 9
         one: 14
@@ -801,6 +801,18 @@ strings:
   relog: '&c[player] &7relogged too fast &7VL &c[violations]&7.'
   tellchatnormal: ncp tell [player] Slow down in chat!
   vehicleenvelope: '&c[player] &7could be using &6[check] &7VL &c[violations]'
+  cheatkick: ccmd [player] unless -ping->151|-tps-<19.2|-time_online-<30|-uptime-<80
+    do /0/ kick [player] &cNCP &7» &rSuspicious Server Activity! /5/ ncp log stream
+    notify?c+console?nc &c&lAUTOKICK:&r &7The player &c[player] &7has been kicked
+    due to &6[check] &7(&7VL &c[violations]&7 - Ping < 151 - TPS > 19.2)
+  ccheatkick: ccmd [player] unless -time_online-<30|-uptime-<80 do /0/ kick [player]
+    &cNCP &7» &rSuspicious Server Activity! /5/ ncp log stream notify?c+console?nc
+    &c&lAUTOKICK:&r &7The player &c[player]&7has been kicked due to &6[check] &7(&7VL
+    &c[violations]&7 - High VL - Skipped Ping & TPS Check)
+  cccheatkick: ccmd [player] unless -ping->90|-tps-<19.5|-time_online-<30|-uptime-<80
+    do /0/ kick [player] &cNCP &7» &rSuspicious Server Activity! /5/ ncp log stream
+    notify?c+console?nc &c&lAUTOKICK:&r&7The player &c[player] &7has been kicked due
+    to &6[check] &7(&7VL &c[violations]&7 - Ping < 90 - TPS > 19.5)
   highvlerror: '&7The player &c[player] &7caused the check &c[check] &7to go up very
     high to &6[violations]&7. Please investigate this issue.'
 compatibility:
@@ -832,8 +844,7 @@ compatibility:
       minimalworldy: -64
     breakingtime:
       IRON_BLOCK:PICKAXE:DIAMOND:12: 1139
-    allowinstantbreak:
-    - LONG_GRASS
+    allowinstantbreak: []
     overrideflags:
       moving_piston: default+ign_passable+ground_height
       DEAD_TUBE_CORAL: default+ign_passable+ground_height
@@ -850,11 +861,7 @@ compatibility:
       DEAD_BRAIN_CORAL_FAN: default+ign_passable+ground_height
       DEAD_BUBBLE_CORAL_FAN: default+ign_passable+ground_height
       snow: default
-      piston_moving_piece: default+ign_passable+ground_height
-      WATER_LILY: default+ign_passable+ground_height+height8_1
-      '60': default+ign_passable+ground_height+height8_1
-      '208': solid+ground+height100+ground_height
-      STEP: solid+ground+xz100+height100+ground_height+ign_passable
+      lily_pad: default+ign_passable+ground_height+height8_1
       soul_sand: F_GROUND
       honey_block: F_GROUND
       slime_block: F_GROUND
