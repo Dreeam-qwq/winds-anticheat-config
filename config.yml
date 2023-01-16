@@ -651,16 +651,16 @@ checks:
     attackfrequency:
       active: default
       limitforseconds:
-        half: 8
+        half: 10
         one: 15
-        two: 30
-        four: 60
-        eight: 95
+        two: 40
+        four: 55
+        eight: 100
       improbable:
         weight: 3.0
-      actions: cancel vl>10 cancel log:attackfrequency:4:5:i vl>200 cancel log:attackfrequency:0:4:if
+      actions: cancel vl>15 cancel log:attackfrequency:0:7:i vl>40 cancel vl>55 cancel vl>70 cancel
     flyingfrequency:
-      active: default
+      active: false
       seconds: 5
       packetspersecond: 60
       actions: cancel vl>20 cancel log:flyingfrequency:3:2:i vl>500 cancel log:flyingfrequency:0:5:if
@@ -674,13 +674,13 @@ checks:
       seconds: 20
       actions: cancel vl>10 cancel log:keepalive:2:6:i vl>60 cancel log:keepalive:0:10:icf
     moving:
-      active: default
+      active: false
       actions: cancel vl>17 cancel log:moving:10:15:i
     packetfrequency:
       active: default
       limitpersecond: 300
       seconds: 4
-      actions: cancel vl>2 cancel
+      actions: cancel vl>4 cancel
     sounddistance:
       active: false
       maxdistance: 320
