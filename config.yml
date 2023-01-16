@@ -24,7 +24,7 @@ logging:
       filename: nocheatplus.log
     ingamechat:
       active: true
-      prefix: '&7&l[&cNC+&7&l]&7 '
+      prefix: '&c&lWATCHDOG &7»&r '
 data:
   expiration:
     active: false
@@ -49,7 +49,7 @@ permissions:
 protection:
   plugins:
     hide:
-      active: true
+      active: false
       nopermission:
         message: '&cI''m sorry, but you do not have permission to perform this command.
           Please contact the server administrators if you believe that this is in
@@ -74,7 +74,7 @@ checks:
   lag: true
   debug: false
   blockbreak:
-    active: default
+    active: false
     direction:
       active: default
       actions: cancel
@@ -110,7 +110,7 @@ checks:
       actions: cancel vl>10 log:bwrong:2:5:i cancel vl>30 cancel log:bwrong:0:5:if
         cmdc:kickwb:0:5
   blockinteract:
-    active: default
+    active: false
     direction:
       active: default
       actions: cancel vl>15 cancel log:bdirection:4:8:i vl>200 cancel log:bdirection:1:5:if
@@ -128,7 +128,7 @@ checks:
       active: default
       actions: cancel vl>30 log:bvisible:8:5:if cancel
   blockplace:
-    active: default
+    active: false
     against:
       active: default
       actions: cancel log:against:1:5:i vl>10 cancel log:against:0:2:if cmdc:kickagainst:0:10
@@ -185,7 +185,7 @@ checks:
     preventmisc:
       boatsanywhere: true
   chat:
-    active: default
+    active: false
     captcha:
       active: 'false'
       skip:
@@ -305,7 +305,7 @@ checks:
       kickmessage: Too many players are logging in at the same time, please try again
         later.
   combined:
-    active: default
+    active: false
     enderpearl:
       active: true
       preventclickblock: true
@@ -338,7 +338,7 @@ checks:
         feedonly: false
         weight: 90.0
   fight:
-    active: default
+    active: false
     canceldead: true
     maxloopletencyticks: 8
     toolchangepenalty: 0
@@ -414,7 +414,7 @@ checks:
         feedonly: false
         weight: 1.0
   inventory:
-    active: default
+    active: false
     fastclick:
       active: default
       exclude:
@@ -546,8 +546,8 @@ checks:
       actions: cancel vl>2 cancel log:morepackets:10:9:i vl>100 cancel log:morepackets:0:2:ifc
         cmdc:kickpackets:0:10
     nofall:
-      active: default
-      dealdamage: true
+      active: false
+      dealdamage: false
       skipallowflight: true
       resetonviolation: false
       resetonteleport: false
@@ -555,7 +555,7 @@ checks:
       anticriticals: true
       actions: cancel vl>2 cancel log:nofall:0:5:if
     passable:
-      active: default
+      active: false
       actions: cancel vl>15 cancel log:passable:7:9:i vl>100 cancel log:passable:1:4:if
       untracked:
         teleport:
@@ -622,10 +622,10 @@ checks:
     ignorestance: default
     tempkickillegal: true
     loadchunks:
-      join: true
+      join: false
       move: false
-      teleport: true
-      worldchange: true
+      teleport: false
+      worldchange: false
     sprintinggrace: 4.0
     assumesprint: true
     speedgrace: 4.0
@@ -676,7 +676,7 @@ checks:
         seconds: 3
         actions: cancel
     keepalivefrequency:
-      active: default
+      active: false
       seconds: 20
       actions: cancel vl>10 cancel log:keepalive:2:6:i vl>60 cancel log:keepalive:0:10:icf
         cmdc:kickalive:0:5
@@ -689,13 +689,13 @@ checks:
       seconds: 4
       actions: cancel vl>2 cancel cmdc:kickpacketfrequency:0:5
     sounddistance:
-      active: default
+      active: false
       maxdistance: 320
     superseded:
       flying:
         cancelwaiting: true
     wrongturn:
-      active: default
+      active: false
       actions: cancel log:wrongturn:0:15:icf cmdc:kickillegalrotations:0:10
 strings:
   against: '&c[player]&7 failed &c[check]&7: tried to place a block against liquid
@@ -868,7 +868,7 @@ compatibility:
     blockcache:
       minimalworldy: -64
     changetracker:
-      active: true
+      active: false
       pistons: true
       maxageticks: 20
       perworld:
