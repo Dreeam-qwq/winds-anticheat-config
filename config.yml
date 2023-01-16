@@ -532,7 +532,6 @@ checks:
           strict: true
       actions: cancel log:flyfile:3:5:f vl>100 cancel log:creativefly:8:9:i log:flyfile:0:10:f
         vl>900 cancel log:creativefly:2:4:i log:flyfile:0:5:cf vl>2000 cancel log:creativefly:0:5:icf
-        cmdc:kickfly:0:15
     morepackets:
       active: default
       seconds: 6
@@ -544,7 +543,6 @@ checks:
         epmviolation: 95
       setbackage: 110
       actions: cancel vl>2 cancel log:morepackets:10:9:i vl>100 cancel log:morepackets:0:2:ifc
-        cmdc:kickpackets:0:10
     nofall:
       active: false
       dealdamage: false
@@ -603,7 +601,6 @@ checks:
         voidtovoid: false
       actions: cancel log:flyfile:6:15:f vl>100 cancel log:survivalfly:10:11:i log:flyfile:6:15:f
         vl>700 cancel log:survivalfly:8:5:i log:flyfile:1:3:f vl>2100 cancel log:survivalflyhighvl:0:4:icf
-        cmdc:kickfly:0:15
       hover:
         active: true
         step: 5
@@ -640,14 +637,12 @@ checks:
       morepackets:
         active: default
         actions: cancel vl>2 log:morepackets:2:5:if cancel vl>100 cancel log:morepackets:1:2:if
-          cmdc:kickpackets:2:10
       envelope:
         active: default
         hdistcap:
           default: 0.9
           pig: 0.3
         actions: cancel vl>50 cancel log:vehicleenvelope:10:6:if vl>300 cancel log:vehicleenvelope:0:10:if
-          cmdc:kickvehiclefly:0:10
     message:
       illegalplayermove: Illegal move.
       illegalvehiclemove: Illegal vehicle move.
@@ -664,13 +659,12 @@ checks:
       improbable:
         weight: 3.0
       actions: cancel vl>10 cancel log:attackfrequency:4:5:i vl>200 cancel log:attackfrequency:0:4:if
-        cmdc:kickattackfrequency
     flyingfrequency:
       active: default
       seconds: 5
       packetspersecond: 60
       actions: cancel vl>20 cancel log:flyingfrequency:3:2:i vl>500 cancel log:flyingfrequency:0:5:if
-        vl>1000 cancel log:flyingfrequency:0:2:icf cmdc:kickflyingfrequency:0:10
+        vl>1000 cancel log:flyingfrequency:0:2:icf
       reduceredundant:
         active: true
         seconds: 3
@@ -679,7 +673,6 @@ checks:
       active: false
       seconds: 20
       actions: cancel vl>10 cancel log:keepalive:2:6:i vl>60 cancel log:keepalive:0:10:icf
-        cmdc:kickalive:0:5
     moving:
       active: default
       actions: cancel vl>17 cancel log:moving:10:15:i
@@ -687,7 +680,7 @@ checks:
       active: default
       limitpersecond: 300
       seconds: 4
-      actions: cancel vl>2 cancel cmdc:kickpacketfrequency:0:5
+      actions: cancel vl>2 cancel
     sounddistance:
       active: false
       maxdistance: 320
@@ -696,7 +689,7 @@ checks:
         cancelwaiting: true
     wrongturn:
       active: false
-      actions: cancel log:wrongturn:0:15:icf cmdc:kickillegalrotations:0:10
+      actions: cancel log:wrongturn:0:15:icf
 strings:
   against: '&c[player]&7 failed &c[check]&7: tried to place a block against liquid
     blocks or air as if they were solid &7(&cVL[violations]&7)'
