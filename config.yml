@@ -831,6 +831,12 @@ strings:
     (&6>90 &7or&6 <-90&7) &7(&cVL[violations]&7)'
   clearcritical: ncp removeplayer [player] FIGHT_CRITICAL
   clearscaffold: ncp removeplayer [player] BLOCKPLACE_SCAFFOLD
+  clearcf: ncp removeplayer [player] MOVING_CREATIVEFLY
+  clearvehicle: ncp removeplayer [player] MOVING_VEHICLE_ENVELOPE
+  flyshort: ccmd [player] unless -time_online-<30|-uptime-<80 do ncp log stream notify
+    &c[player] &7could be &6Speeding &7VL &c[violations]
+  highvlerror: '&7The player &c[player] &7caused the check &c[check] &7to go up very
+    high to &6[violations]&7. Please investigate this issue.'
 compatibility:
   exemptions:
     wildcard:
