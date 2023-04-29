@@ -579,7 +579,7 @@ checks:
           - tphere
     survivalfly:
       active: default
-      stepheight: -1
+      stepheight: 2
       extended:
         vertical-accounting: true
         horizontal-accounting: true
