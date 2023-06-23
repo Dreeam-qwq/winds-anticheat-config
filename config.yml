@@ -534,7 +534,7 @@ checks:
         log:flyfile:0:5:cf vl>3000 cancel log:creativefly:0:5:icf cmd:clearcf:0:15
         vl>4250 cancel vl>5000 cancel vl>6500 cancel
     morepackets:
-      active: default
+      active: false
       seconds: 6
       epsideal: 20
       epsmax: 22
