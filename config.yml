@@ -521,12 +521,12 @@ checks:
           modifiers: false
         elytra:
           horizontal:
-            speed: 1500
+            speed: 2000
             modsprint: 1.0
           vertical:
             ascend:
-              speed: 1500
-            maxheight: 300
+              speed: 1600
+            maxheight: 320
           modifiers: false
           resetFwOnground: false
           strict: false
@@ -591,20 +591,20 @@ checks:
         violationfrequency:
           active: true
           debug: false
-          maxleniencyvl: 35
-          mintoadd: 5
+          maxleniencyvl: 50
+          mintoadd: 1
           morevls: 5
-          movecount: 10
-        freezecount: 40
-        freezeinair: true
+          movecount: 5
+        freezecount: 60
+        freezeinair: false
       setbackpolicy:
         falldamage: false
         voidtovoid: false
-      actions: vl>100 cancel log:survivalfly:10:11:i log:flyfile:6:15:f vl>700 cancel
+      actions: vl>300 cancel log:survivalfly:10:11:i log:flyfile:6:15:f vl>700 cancel
         log:survivalfly:8:5:i log:flyfile:1:3:f vl>2100 cancel log:survivalflyhighvl:0:4:icf
         vl>5500 cancel vl>7000 cancel vl>8000 cancel vl>25000 cancel log:highvlerror:0:2:ic
       hover:
-        active: true
+        active: false
         step: 5
         ticks: 85
         loginticks: 100
@@ -621,10 +621,10 @@ checks:
     ignorestance: default
     tempkickillegal: false
     loadchunks:
-      join: false
-      move: false
+      join: true
+      move: true
       teleport: false
-      worldchange: false
+      worldchange: true
     sprintinggrace: 4.0
     assumesprint: true
     speedgrace: 4.0
@@ -644,7 +644,7 @@ checks:
         hdistcap:
           default: 20
           pig: 0.3
-        actions: vl>230 cancel log:vehicleenvelope:0:10:if cmd:clearvehicle:0:15
+        actions: vl>500 cancel log:vehicleenvelope:0:10:if cmd:clearvehicle:0:15
     message:
       illegalplayermove: Illegal move.
       illegalvehiclemove: Illegal vehicle move.
